@@ -1,0 +1,73 @@
+.hero {
+    background: url('/assets/images/cattracks2.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1;
+  }
+  
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  .info {
+    color: #000000;
+    font-family: 'Playfair Display', serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .info h2 {
+    margin-bottom: 10px;
+  }
+  
+  .info p {
+    font-size: 1em;
+  }
+
+  .decorative-line {
+    width: 80%; 
+    height: 2px;
+    background-color: #ccc;
+    margin: 10px auto; 
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+  
+  

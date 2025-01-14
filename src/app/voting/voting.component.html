@@ -1,0 +1,15 @@
+<div class="voting-container">
+    <h1>Vote for Your Favorite Artwork</h1>
+    <h4>Voting will begin (i dunno).</h4>
+    <div class="art-grid">
+      <div *ngFor="let art of artworks" class="art-card">
+        <img [src]="art.file_path" [alt]="art.artwork_title" />
+        <h3>{{ art.artwork_title }}</h3>
+        <p><strong>Artist:</strong> {{ art.artist_name }}</p>
+        <button (click)="vote(art.id)" [disabled]="votedArtId === art.id">
+          {{ votedArtId === art.id ? 'Voted' : 'Vote' }}
+        </button>
+      </div>
+    </div>
+  </div>
+  

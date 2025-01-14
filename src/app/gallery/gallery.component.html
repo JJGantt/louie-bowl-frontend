@@ -1,0 +1,13 @@
+<div class="gallery-container">
+    <h1>Gallery</h1>
+    <h4>Submissions will be displayed soon.</h4>
+    <div class="art-grid">
+      <div *ngFor="let art of artworks" class="art-card">
+        <img [src]="art.file_path" [alt]="art.artwork_title" />
+        <h3>{{ art.artwork_title }}</h3>
+        <p><strong>Artist:</strong> {{ art.artist_name }}</p>
+        <p>{{ art.description }}</p>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,34 @@
+<section class="register-container">
+    <h1>Registration</h1>
+    <div>
+        <label for="name">Name:</label>
+        <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="registration.name"
+        required
+        />
+    
+        <label for="teammate">Teammate:</label>
+        <input
+        type="text"
+        id="teammate"
+        name="teammate"
+        [(ngModel)]="registration.teammate"
+        />
+    
+        <label for="email">Email:</label>
+        <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="registration.email"
+        required
+        />
+    
+        <div id="paypal-button-container"></div>
+    </div>
+    
+</section>
+  
