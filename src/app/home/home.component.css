@@ -45,7 +45,7 @@
   .info {
     color: #000000;
     font-family: 'Playfair Display', serif;
-    padding: 20px;
+    padding: 20px, 20px, 200px, 20px;
     text-align: center;
   }
   
@@ -70,4 +70,8 @@
     margin: 10px 0;
   }
   
+  .main-content {
+    /* create space at the bottom equal to footer’s height */
+    padding-bottom: 60px;
+  }
   
