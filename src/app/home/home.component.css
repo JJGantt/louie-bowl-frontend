@@ -3,6 +3,7 @@
     color: white;
     text-align: center;
     padding: 50px 20px;
+    position: relative;
 }
   
 .hero-content {
@@ -10,7 +11,6 @@
     display: inline-block;
     padding: 20px;
     border-radius: 10px;
-    z-index: 1;
 }
 
 a {
@@ -49,7 +49,7 @@ a {
 .info {
     color: #000000;
     font-family: 'Playfair Display', serif;
-    padding: 20px, 20px, 200px, 20px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -77,3 +77,54 @@ a {
 .main-content {
     padding-bottom: 60px;
 }
+
+.mononoaware {
+    background: url('/assets/images/7426164_orig.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+  
+.mono-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 40px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+a {
+    color: #ffd700;
+}
+
+.mono h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.mono p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+
+.image-credit {
+    position: absolute;
+    bottom: 10px; /* 10px from the bottom */
+    right: 10px; /* 10px from the right */
+    padding: 5px 10px; /* Padding around the text */
+    font-size: 0.8em; /* Smaller font size */
+    z-index: 1;
+}
+  
+  /* Credit Link Styling */
+.image-credit a {
+    color: #fff
+    text-decoration: underline; /* Underlines the link */
+}
+  
+.image-credit a:hover {
+    text-decoration: none; /* Removes underline on hover for a cleaner look */
+}
+
