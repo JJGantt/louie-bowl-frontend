@@ -3,13 +3,13 @@
     <div class="logo">
       <a routerLink="/">Louie Bowl: Canvas & Cues</a>
     </div>
-    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle Menu">☰</button>
     <ul [class.open]="menuOpen">
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/register">Register</a></li>
-      <li><a routerLink="/submit-art">Submit Artwork</a></li>
-      <li><a routerLink="/gallery">Gallery</a></li>
-      <li><a routerLink="/voting">Voting</a></li>
+      <li><a routerLink="/" (click)="toggleMenu()">Home</a></li>
+      <li><a routerLink="/register" (click)="toggleMenu()">Register</a></li>
+      <li><a routerLink="/submit-art" (click)="toggleMenu()">Submit Artwork</a></li>
+      <li><a routerLink="/gallery" (click)="toggleMenu()">Gallery</a></li>
+      <li><a routerLink="/voting" (click)="toggleMenu()">Voting</a></li>
     </ul>
   </nav>
   <main>
