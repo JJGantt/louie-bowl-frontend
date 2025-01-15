@@ -15,6 +15,8 @@ export class SubmitArtComponent {
     artistName: '',
     title: '',
     description: '',
+    phone: '', 
+    email: ''
   };
 
   selectedFile: File | null = null;
@@ -43,7 +45,7 @@ export class SubmitArtComponent {
     this.http.post('https://louie-bowl-backend-production.up.railway.app/api/submit-art', formData).subscribe({
       next: (response) => {
         console.log('Submission successful:', response);
-        alert('Submission successful! Your art will be diplayed after a short review period.');
+        alert('Submission successful!');
       },
       error: (error) => {
         console.error('Error submitting artwork:', error);

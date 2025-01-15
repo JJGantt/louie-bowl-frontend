@@ -82,13 +82,12 @@ body, html {
     background-color: #333; 
     color: white; 
     text-align: center;
-    padding: 10px 10px 0px 10px;
+    padding: 5px;
     font-size: 0.9em; 
-    position: fixed; 
     bottom: 0;
     left: 0;
     width: 100%; 
-    z-index: 1000;
+    margin-top: 20px;    
   }
   
   .footer-bar a {

@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
           purchase_units: [
             {
               amount: {
-                value: '60.00', 
+                value: '1.00', 
               },
             },
           ],

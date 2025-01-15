@@ -3,28 +3,32 @@
     color: white;
     text-align: center;
     padding: 50px 20px;
-  }
+}
   
-  .hero-content {
+.hero-content {
     background-color: rgba(0, 0, 0, 0.6);
     display: inline-block;
     padding: 20px;
     border-radius: 10px;
     z-index: 1;
-  }
-  
-  .hero h1 {
+}
+
+a {
+    color: #ffd700;
+}
+
+.hero h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
-  }
-  
-  .hero p {
+}
+
+.hero p {
     font-size: 1.2em;
     margin-bottom: 20px;
-  }
-  
+}
 
-  .button {
+
+.button {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
@@ -35,43 +39,41 @@
     text-align: center;
     cursor: pointer;
     z-index: 2;
-  }
-  
-  .button:hover {
+}
+
+.button:hover {
     background-color: #0056b3;
-  }
-  
-  
-  .info {
+}
+
+
+.info {
     color: #000000;
     font-family: 'Playfair Display', serif;
     padding: 20px, 20px, 200px, 20px;
     text-align: center;
-  }
-  
-  .info h2 {
-    margin-bottom: 10px;
-  }
-  
-  .info p {
-    font-size: 1em;
-  }
+}
 
-  .decorative-line {
+.info h2 {
+    margin-bottom: 10px;
+}
+
+.info p {
+    font-size: 1em;
+}
+
+.decorative-line {
     width: 80%; 
     height: 2px;
     background-color: #ccc;
     margin: 10px auto; 
-  }
-  
-  .section-title {
+}
+
+.section-title {
     text-align: center;
     font-size: 1.5em;
     margin: 10px 0;
-  }
-  
-  .main-content {
-    /* create space at the bottom equal to footer’s height */
+}
+
+.main-content {
     padding-bottom: 60px;
-  }
-  
+}

@@ -1,5 +1,15 @@
 <section class="submit-art-container">
     <h1>Submit Your Artwork</h1>
+    <ul>
+        <li>Canvas size minimum: 16x20 inches. 
+        <li>10 pieces will be selected for the competition and displayed for public voting.</li>
+        <li>Selected artists will be contacted to schedule the drop-off of their artwork.</li>
+        <li>Artwork will be displayed on February 12th, 2025 for voting.</li>
+        <li>All donated pieces will be raffled. All proceeds will go toward the donation fund.
+        <li>The top winner will receive a $300 cash prize and receive the Louie Bowl Art Trophy!</li>
+        <li>The winner will be revealed at the event.</li>
+    </ul>
+      
     <form (ngSubmit)="onSubmit()" #artForm="ngForm">
       <div class="form-group">
         <label for="artistName">Artist Name:</label>
@@ -22,15 +32,27 @@
           required
         />
       </div>
-  
+      
       <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea
-          id="description"
-          name="description"
-          [(ngModel)]="artSubmission.description"
+        <label for="email">Email:</label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          [(ngModel)]="artSubmission.email"
           required
-        ></textarea>
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          [(ngModel)]="artSubmission.phone"
+          required
+        />
       </div>
   
       <div class="form-group">
