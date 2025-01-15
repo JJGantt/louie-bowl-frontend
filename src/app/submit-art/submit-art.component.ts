@@ -14,9 +14,8 @@ export class SubmitArtComponent {
   artSubmission = {
     artistName: '',
     title: '',
-    description: '',
-    phone: '',
     email: '',
+    phone: '',
   };
 
   selectedFile: File | null = null;
@@ -56,7 +55,8 @@ export class SubmitArtComponent {
     const formData = new FormData();
     formData.append('artistName', this.artSubmission.artistName);
     formData.append('title', this.artSubmission.title);
-    formData.append('description', this.artSubmission.description);
+    formData.append('email', this.artSubmission.email);
+    formData.append('phone', this.artSubmission.phone);
     formData.append('file', this.selectedFile);
 
     this.http.post('https://louie-bowl-backend-production.up.railway.app/api/submit-art', formData).subscribe({
