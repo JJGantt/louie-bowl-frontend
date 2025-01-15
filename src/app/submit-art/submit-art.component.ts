@@ -40,7 +40,7 @@ export class SubmitArtComponent {
     }
   }
   
-  onSubmit() {
+  onSubmit(form: NgForm) {
     if (this.artForm.invalid) {
       this.markAllFieldsAsTouched();
       alert('Please fix the errors in the form before submitting.');
@@ -59,11 +59,17 @@ export class SubmitArtComponent {
     formData.append('phone', this.artSubmission.phone);
     formData.append('file', this.selectedFile);
 
+    console.log('FormData Contents:');
+      for (let [key, value] of formData.entries()) {
+      console.log(`${key}:`, value);
+    }
+
     this.http.post('https://louie-bowl-backend-production.up.railway.app/api/submit-art', formData).subscribe({
       next: (response) => {
         console.log('Submission successful:', response);
         alert('Submission successful!');
-        this.artForm.resetForm(); 
+        form.resetForm(); 
+        this.selectedFile = null;
       },
       error: (error) => {
         console.error('Error submitting artwork:', error);

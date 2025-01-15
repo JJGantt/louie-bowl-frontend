@@ -9,7 +9,7 @@
       <li>The winner will be revealed at the event and receive a $300 cash prize and the Louie Bowl Art Trophy! </li>
     </ul>
   
-    <form (ngSubmit)="onSubmit()" #artForm="ngForm" novalidate>
+    <form (ngSubmit)="onSubmit(artForm)" #artForm="ngForm" novalidate>
       <!-- Artist Name -->
       <div class="form-group">
         <label for="artistName">Artist Name:</label>
