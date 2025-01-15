@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms'; 
 import { HttpClient } from '@angular/common/http'; 
 import { firstValueFrom } from 'rxjs'; 
+import { CommonModule } from '@angular/common';
+
 
 declare const paypal: any; 
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule], 
+  imports: [FormsModule, CommonModule], 
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
@@ -18,6 +20,8 @@ export class RegisterComponent implements OnInit {
     teammate: '',
     email: '',
   };
+
+  @ViewChild('registrationForm') registrationForm!: NgForm;
 
   constructor(private http: HttpClient) {}
 
@@ -33,12 +37,20 @@ export class RegisterComponent implements OnInit {
         shape: 'pill',
         label: 'checkout',
       },
+      onClick: (data: Record<string, unknown>, actions: any) => {
+        if (this.registrationForm.invalid) {
+          this.markAllFieldsAsTouched();
+          alert('Please fix the errors in the form before proceeding to payment.');
+          return actions.reject(); 
+        }
+        return actions.resolve();
+      },
       createOrder: (data: Record<string, unknown>, actions: any) => {
         return actions.order.create({
           purchase_units: [
             {
               amount: {
-                value: '1.00', 
+                value: '61.99', 
               },
             },
           ],
@@ -57,6 +69,13 @@ export class RegisterComponent implements OnInit {
         alert('Payment failed. Please try again.');
       },
     }).render('#paypal-button-container');
+  }
+
+  markAllFieldsAsTouched(): void {
+    Object.keys(this.registrationForm.controls).forEach(field => {
+      const control = this.registrationForm.controls[field];
+      control.markAsTouched({ onlySelf: true });
+    });
   }
 
   saveRegistration(): void {

@@ -1,20 +1,24 @@
-<nav class="navbar">
-  <div class="logo">
-    <a routerLink="/">Louie Bowl: Canvas & Cues</a>
-  </div>
-  <button class="menu-toggle" (click)="toggleMenu()">☰</button>
-  <ul [class.open]="menuOpen">
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/register">Register</a></li>
-    <li><a routerLink="/submit-art">Submit Artwork</a></li>
-    <li><a routerLink="/gallery">Gallery</a></li>
-    <li><a routerLink="/voting">Voting</a></li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
-<footer class="footer-bar">
-  <p>
-    &copy; 2025 HDZEvents
-    <a href="mailto:hdzEventInfo@gmail.com" class="contact-link">Contact Us</a>
-  </p>
-</footer>
+<div class="flexwrap">
+  <nav class="navbar">
+    <div class="logo">
+      <a routerLink="/">Louie Bowl: Canvas & Cues</a>
+    </div>
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+    <ul [class.open]="menuOpen">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/register">Register</a></li>
+      <li><a routerLink="/submit-art">Submit Artwork</a></li>
+      <li><a routerLink="/gallery">Gallery</a></li>
+      <li><a routerLink="/voting">Voting</a></li>
+    </ul>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="footer-bar">
+    <p>
+      &copy; 2025 HDZEvents
+      <a href="mailto:hdzEventInfo@gmail.com" class="contact-link">Contact Us</a>
+    </p>
+  </footer>
+</div>

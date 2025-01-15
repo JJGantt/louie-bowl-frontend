@@ -3,37 +3,66 @@
     <ul>
         <li>Skill Level Cap: APA 10</li>
         <li>Entry Fee: $60 per team</li>
+        <li><i>$1.99 transaction fee</i></li>
     </ul>
     
-    <div>
-        <label for="name">Name:</label>
-        <input
-        type="text"
-        id="name"
-        name="name"
-        [(ngModel)]="registration.name"
-        required
-        />
-    
-        <label for="teammate">Teammate:</label>
-        <input
-        type="text"
-        id="teammate"
-        name="teammate"
-        [(ngModel)]="registration.teammate"
-        />
-    
-        <label for="email">Email:</label>
-        <input
-        type="email"
-        id="email"
-        name="email"
-        [(ngModel)]="registration.email"
-        required
-        />
-    
+    <form #registrationForm="ngForm">
+        <div>
+          <label for="name">Full Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="registration.name"
+            required
+            #name="ngModel"
+            class="form-control"
+          />
+          <!-- Validation Messages -->
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error-messages">
+            <div *ngIf="name.errors?.['required']">Name is required.</div>
+          </div>
+        </div>
+      
+        <div>
+          <label for="teammate">Teammate:</label>
+          <input
+            type="text"
+            id="teammate"
+            name="teammate"
+            [(ngModel)]="registration.teammate"
+            required
+            #teammate="ngModel"
+            class="form-control"
+          />
+          <!-- Validation Messages -->
+          <div *ngIf="teammate.invalid && (teammate.dirty || teammate.touched)" class="error-messages">
+            <div *ngIf="teammate.errors?.['required']">Teammate name is required.</div>
+          </div>
+        </div>
+      
+        <div>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="registration.email"
+            required
+            email
+            #email="ngModel"
+            class="form-control"
+          />
+          <!-- Validation Messages -->
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-messages">
+            <div *ngIf="email.errors?.['required']">Email is required.</div>
+            <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+          </div>
+        </div>
+      
+        <!-- PayPal Button Container -->
         <div id="paypal-button-container"></div>
-    </div>
+      </form>
     
 </section>
   

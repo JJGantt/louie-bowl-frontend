@@ -1,38 +1,141 @@
+/* register.component.css */
+
+/* Container Styling */
 .register-container {
     max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    margin: 40px auto; /* Increased top and bottom margin for better spacing */
+    padding: 25px; /* Increased padding for a more spacious layout */
+    background-color: #f9f9f9; /* Light background for readability */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-family: Arial, sans-serif; /* Consistent font family */
   }
   
+  /* Heading Styling */
   .register-container h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Increased bottom margin for spacing */
+    color: #2c3e50; /* Darker color for prominence */
+    font-size: 2em; /* Larger font size for emphasis */
   }
   
+  /* List Styling */
+  .register-container ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    line-height: 1.6;
+    margin-bottom: 30px; /* Increased bottom margin */
+    color: #34495e; /* Consistent text color */
+  }
+  
+  .register-container li {
+    margin-bottom: 10px;
+  }
+  
+  /* Form Group Styling */
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Increased spacing between form groups */
   }
   
-  label {
+  .form-group label {
     display: block;
+    margin-bottom: 8px; /* Increased space between label and input */
     font-weight: bold;
-    margin-bottom: 5px;
+    color: #2c3e50; /* Matching label color with heading */
   }
   
+  /* Input and Select Styling */
   input,
   select {
     width: 100%;
-    padding: 8px;
+    padding: 10px; /* Increased padding for better usability */
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Smooth transition for border color changes */
   }
   
+  /* Enhanced Input Focus State */
+  input:focus,
+  select:focus {
+    border-color: #2980b9; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.5); /* Subtle shadow for focus indication */
+  }
+  
+  /* PayPal Button Container */
   #paypal-button-container {
-    margin-top: 20px;
+    margin-top: 25px; /* Increased top margin */
     text-align: center;
+  }
+  
+  /* Error Messages Styling */
+  .error-messages {
+    color: red;
+    font-size: 0.85em; /* Slightly smaller font for error messages */
+    margin-top: 5px;
+  }
+  
+  /* Input Validation States */
+  input.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched {
+    border-color: red;
+  }
+  
+  input.ng-valid.ng-touched,
+  select.ng-valid.ng-touched {
+    border-color: green;
+  }
+  
+  /* Form Control Styling */
+  .form-control {
+    width: 100%;
+    padding: 10px; /* Consistent padding */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Submit Button Styling */
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px; /* Increased padding for better clickability */
+    background-color: #2980b9; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+  
+  button[type="submit"]:hover:not(:disabled) {
+    background-color: #1f6391; /* Darker blue on hover */
+  }
+  
+  button[type="submit"]:disabled {
+    background-color: #bdc3c7; /* Greyed out when disabled */
+    cursor: not-allowed;
+    opacity: 0.7; /* Reduced opacity for disabled state */
+  }
+  
+  /* Selected File Name Styling (If Applicable) */
+  .selected-file {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #27ae60; /* Green color to indicate success */
+  }
+  
+  /* Image Preview Styling (If Applicable) */
+  .image-preview {
+    margin-top: 10px;
+  }
+  
+  .image-preview img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
   

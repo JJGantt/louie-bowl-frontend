@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms'; 
 import { HttpClient } from '@angular/common/http';
-
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-submit-art',
   standalone: true,
-  imports: [FormsModule], // Include FormsModule
+  imports: [FormsModule, CommonModule], 
   templateUrl: './submit-art.component.html',
   styleUrls: ['./submit-art.component.css'],
 })
@@ -15,11 +15,13 @@ export class SubmitArtComponent {
     artistName: '',
     title: '',
     description: '',
-    phone: '', 
-    email: ''
+    phone: '',
+    email: '',
   };
 
   selectedFile: File | null = null;
+
+  @ViewChild('artForm') artForm!: NgForm;
 
   constructor(private http: HttpClient) {}
 
@@ -30,7 +32,22 @@ export class SubmitArtComponent {
     }
   }
 
+  markAllFieldsAsTouched(): void {
+    if (this.artForm && this.artForm.controls) {
+      Object.keys(this.artForm.controls).forEach(field => {
+        const control = this.artForm.controls[field];
+        control.markAsTouched({ onlySelf: true }); 
+      });
+    }
+  }
+  
   onSubmit() {
+    if (this.artForm.invalid) {
+      this.markAllFieldsAsTouched();
+      alert('Please fix the errors in the form before submitting.');
+      return;
+    }
+
     if (!this.selectedFile) {
       alert('Please select a file.');
       return;
@@ -46,6 +63,7 @@ export class SubmitArtComponent {
       next: (response) => {
         console.log('Submission successful:', response);
         alert('Submission successful!');
+        this.artForm.resetForm(); 
       },
       error: (error) => {
         console.error('Error submitting artwork:', error);
@@ -54,4 +72,3 @@ export class SubmitArtComponent {
     });
   }
 }
-

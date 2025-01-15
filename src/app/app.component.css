@@ -1,7 +1,16 @@
-body, html {
+  body, html {
     margin: 0;
-    padding: 0px, 0px, 40px;
     font-family: Arial, sans-serif;
+  }
+
+  .flexwrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+  }
+
+  main {
+    flex: 1;
   }
   
   .navbar {
@@ -99,20 +108,4 @@ body, html {
   .footer-bar a:hover {
     text-decoration: underline; 
   }
-  
-  .social-icons {
-    margin-top: 5px;
-  }
-  
-  .social-icons a {
-    color: white;
-    font-size: 1.2em; 
-    margin: 0 10px;
-    text-decoration: none;
-  }
-  
-  .social-icons a:hover {
-    color: #ffd700; 
-  }
-  
   

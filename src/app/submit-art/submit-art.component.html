@@ -1,16 +1,17 @@
 <section class="submit-art-container">
     <h1>Submit Your Artwork</h1>
     <ul>
-        <li>Canvas size minimum: 16x20 inches. 
-        <li>10 pieces will be selected for the competition and displayed for public voting.</li>
-        <li>Selected artists will be contacted to schedule the drop-off of their artwork.</li>
-        <li>Artwork will be displayed on February 12th, 2025 for voting.</li>
-        <li>All donated pieces will be raffled. All proceeds will go toward the donation fund.
-        <li>The top winner will receive a $300 cash prize and receive the Louie Bowl Art Trophy!</li>
-        <li>The winner will be revealed at the event.</li>
+      <li>Canvas size minimum: 16x20 inches.</li>
+      <li>10 pieces will be selected for the competition and displayed for public voting.</li>
+      <li>Selected artists will be contacted to schedule the drop-off of their artwork.</li>
+      <li>Artwork will be displayed on February 12th, 2025 for voting.</li>
+      <li>All donated pieces will be raffled. All proceeds will go toward the donation fund.</li>
+      <li>The top winner will receive a $300 cash prize and receive the Louie Bowl Art Trophy!</li>
+      <li>The winner will be revealed at the event.</li>
     </ul>
-      
-    <form (ngSubmit)="onSubmit()" #artForm="ngForm">
+  
+    <form (ngSubmit)="onSubmit()" #artForm="ngForm" novalidate>
+      <!-- Artist Name -->
       <div class="form-group">
         <label for="artistName">Artist Name:</label>
         <input
@@ -19,9 +20,16 @@
           name="artistName"
           [(ngModel)]="artSubmission.artistName"
           required
+          #artistName="ngModel"
+          class="form-control"
         />
+        <!-- Validation Messages -->
+        <div *ngIf="artistName.invalid && (artistName.dirty || artistName.touched)" class="error-messages">
+          <div *ngIf="artistName.errors?.['required']">Artist Name is required.</div>
+        </div>
       </div>
   
+      <!-- Artwork Title -->
       <div class="form-group">
         <label for="title">Artwork Title:</label>
         <input
@@ -30,42 +38,72 @@
           name="title"
           [(ngModel)]="artSubmission.title"
           required
+          #title="ngModel"
+          class="form-control"
         />
+        <!-- Validation Messages -->
+        <div *ngIf="title.invalid && (title.dirty || title.touched)" class="error-messages">
+          <div *ngIf="title.errors?.['required']">Artwork Title is required.</div>
+        </div>
       </div>
-      
+  
+      <!-- Email -->
       <div class="form-group">
         <label for="email">Email:</label>
         <input
-          type="text"
+          type="email"
           id="email"
           name="email"
           [(ngModel)]="artSubmission.email"
           required
+          email
+          #email="ngModel"
+          class="form-control"
         />
+        <!-- Validation Messages -->
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-messages">
+          <div *ngIf="email.errors?.['required']">Email is required.</div>
+          <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+        </div>
       </div>
-
+  
+      <!-- Phone Number -->
       <div class="form-group">
         <label for="phone">Phone Number:</label>
         <input
-          type="text"
+          type="tel"
           id="phone"
           name="phone"
           [(ngModel)]="artSubmission.phone"
           required
+          pattern="^[0-9]{10}$"
+          #phone="ngModel"
+          class="form-control"
         />
+        <!-- Validation Messages -->
+        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="error-messages">
+          <div *ngIf="phone.errors?.['required']">Phone Number is required.</div>
+          <div *ngIf="phone.errors?.['pattern']">Please enter a valid 10-digit phone number.</div>
+        </div>
       </div>
   
+      <!-- Upload Artwork -->
       <div class="form-group">
         <label for="image">Upload Artwork:</label>
         <input
-          type="file"
-          id="image"
-          (change)="onFileSelected($event)"
-          required
+            type="file"
+            id="image"
+            (change)="onFileSelected($event)"
+            required
+            class="form-control"
+            accept=".jpg, .jpeg, .png, .pdf"
+            aria-describedby="imageHelp"
         />
+    
       </div>
   
-      <button type="submit" [disabled]="!artForm.form.valid">Submit</button>
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="artForm.invalid">Submit</button>
     </form>
   </section>
   
