@@ -1,7 +1,8 @@
-/* Reset and Base Styles */
-body, html {
+
+  body, html {
     margin: 0;
     font-family: Arial, sans-serif;
+
   }
   
   .flexwrap {
@@ -14,42 +15,43 @@ body, html {
     flex: 1;
   }
   
-  /* Navbar Styling */
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: white;
+    background-color: var(--fourth-color) !important;
+    color: var(--second-color) !important;
     padding: 10px 20px;
     position: relative;
     z-index: 1000;
     transition: background-color 0.3s ease;
   }
   
-  .navbar:hover {
-    background-color: #444;
-  }
+
   
   .navbar .logo a {
-    color: white;
+    color: var(--first-color);
     text-decoration: none;
     font-size: 1.5em;
     transition: color 0.3s ease;
   }
   
   .navbar .logo a:hover {
-    color: #ffd700;
+    color: var(--hover-color);
   }
   
   .menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: white;
+    color: var(--first-color);
     font-size: 1.8em;
     cursor: pointer;
     transition: transform 0.3s ease;
+  }
+
+  .menu-toggle:hover, .menu-toggle:focus {
+    color: var(--hover-color);
   }
   
   .menu-toggle:focus {
@@ -74,13 +76,13 @@ body, html {
   
   .navbar ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--first-color);
     font-size: 1em;
     transition: color 0.3s ease, transform 0.3s ease;
   }
   
   .navbar ul li a:hover {
-    color: #ffd700;
+    color: var(--hover-color);
     transform: scale(1.05);
   }
   
@@ -95,7 +97,7 @@ body, html {
       position: absolute;
       top: 60px; /* Height of navbar */
       right: 20px;
-      background-color: #333;
+      background-color: var(--fourth-color);
       padding: 10px;
       border-radius: 5px;
       width: 200px;
@@ -123,25 +125,23 @@ body, html {
   
   /* Footer Styling */
   .footer-bar {
-    background-color: #333;
-    color: white;
+    background-color: var(--fourth-color);
+    color: var(--first-color);
     text-align: center;
-    padding: 10px 20px;
+    
     font-size: 0.9em;
     position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0px;
     transition: background-color 0.3s ease;
   }
   
-  .footer-bar:hover {
-    background-color: #444;
-  }
+
   
   .footer-bar a {
-    color: #ffd700;
+    color: var(--link-color);
     text-decoration: none;
     margin-left: 10px;
     transition: color 0.3s ease;
@@ -149,7 +149,7 @@ body, html {
   
   .footer-bar a:hover {
     text-decoration: underline;
-    color: #ffeb3b;
+    color: var(--hover-color);
   }
   
   /* Optional: Add smooth scrolling for internal links */

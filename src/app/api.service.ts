@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class ApiService {
-  private baseUrl = 'http://localhost:3000/api'; 
+export class AuthService {
 
-  constructor(private http: HttpClient) {}
+  constructor() { }
 
-  getTestMessage(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/test`);
+  // Example method to check if the user is logged in
+  isLoggedIn(): boolean {
+    // Implement your login logic, e.g., check for a valid JWT token
+    return !!localStorage.getItem('authToken');
   }
+
+  // Example method to check if the user has admin privileges
+  isAdmin(): boolean {
+    // Implement your admin check logic, e.g., check user roles
+    const userRole = localStorage.getItem('userRole');
+    return userRole === 'admin';
+  }
+
+  // Additional authentication methods (login, logout, etc.) as needed
 }

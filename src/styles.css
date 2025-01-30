@@ -1,0 +1,18 @@
+:root {
+    --first-color: #6a3404;
+    --second-color: #51e208;
+    --third-color: hsl(15, 74%, 85%);
+    --fourth-color: #799cc6;
+    --fourth-color-opaque: rgba(0, 1, 4, 0.518);
+    --link-color: #c1cfe6;
+    --hover-color: #dee2f1;
+    --light-text-color: #f79c52;
+    --dark-text-color: #33629c;
+    --background-color: #b5f8f6;
+    --fade-first-color: #0791f47f;
+    --fade-second-color: #f4f5c8a1;
+    --event-secondary-color: #f3580a;
+    --event-link-color: #dd4422;
+    --event-link-secondary-color: #0a0908;
+    --commem-text-color: #4f2b02;
+  }
